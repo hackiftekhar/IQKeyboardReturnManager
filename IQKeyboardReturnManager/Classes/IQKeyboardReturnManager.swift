@@ -292,3 +292,7 @@ fileprivate extension UIView {
         })
     }
 }
+
+@available(*, unavailable, renamed: "IQKeyboardReturnManager")
+@MainActor
+@objc public final class IQKeyboardReturnKeyHandler: NSObject {}
