@@ -9,7 +9,10 @@
     "description": "Lightweight library to observe keyboard return key and navigate between text input views.",
     "homepage": "https://github.com/hackiftekhar/IQKeyboardReturnManager",
     "screenshots": "https://raw.githubusercontent.com/hackiftekhar/IQKeyboardReturnManager/master/Screenshot/IQKeyboardReturnManagerScreenshot.png",
-    "license": "MIT",
+    "license": {
+        "type": "MIT",
+        "file": "LICENSE"
+    },
     "authors": {
         "Iftekhar Qurashi": "hack.iftekhar@gmail.com"
     },
