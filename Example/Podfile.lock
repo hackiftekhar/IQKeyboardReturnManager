@@ -1,0 +1,16 @@
+PODS:
+  - IQKeyboardReturnManager (1.0.0)
+
+DEPENDENCIES:
+  - IQKeyboardReturnManager (from `../`)
+
+EXTERNAL SOURCES:
+  IQKeyboardReturnManager:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  IQKeyboardReturnManager: cc4a07e8cf1b85b8f691e14ce7cbaee61a00cde3
+
+PODFILE CHECKSUM: 604088f4699a6514976872c3e3958f28d3a00576
+
+COCOAPODS: 1.15.2
