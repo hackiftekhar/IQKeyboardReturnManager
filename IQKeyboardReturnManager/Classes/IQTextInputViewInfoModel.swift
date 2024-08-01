@@ -22,6 +22,7 @@
 //  THE SOFTWARE.
 
 import UIKit
+import IQKeyboardCore
 
 @available(iOSApplicationExtension, unavailable)
 @MainActor
@@ -29,27 +30,26 @@ internal final class IQTextInputViewInfoModel: NSObject {
 
     weak var textFieldDelegate: (any UITextFieldDelegate)?
     weak var textViewDelegate: (any UITextViewDelegate)?
-    weak var textInputView: UIView?
+    weak var textInputView: (any IQTextInputView)?
     let originalReturnKeyType: UIReturnKeyType
 
-    init(textInputView: UITextField) {
+    @objc init(textInputView: any IQTextInputView) {
         self.textInputView = textInputView
-        self.textFieldDelegate = textInputView.delegate
         self.originalReturnKeyType = textInputView.returnKeyType
-    }
+        if let textInputView = textInputView as? UITextField {
+            self.textFieldDelegate = textInputView.delegate
+        } else if let textInputView = textInputView as? UITextView {
+            self.textViewDelegate = textInputView.delegate
+        }
 
-    init(textInputView: UITextView) {
-        self.textInputView = textInputView
-        self.textViewDelegate = textInputView.delegate
-        self.originalReturnKeyType = textInputView.returnKeyType
+        super.init()
     }
 
     func restore() {
+        textInputView?.returnKeyType = originalReturnKeyType
         if let textInputView = textInputView as? UITextField {
-            textInputView.returnKeyType = originalReturnKeyType
             textInputView.delegate = textFieldDelegate
         } else if let textInputView = textInputView as? UITextView {
-            textInputView.returnKeyType = originalReturnKeyType
             textInputView.delegate = textViewDelegate
         }
     }

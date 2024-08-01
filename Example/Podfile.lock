@@ -1,15 +1,22 @@
 PODS:
-  - IQKeyboardReturnManager (1.0.0)
+  - IQKeyboardCore (1.0.3)
+  - IQKeyboardReturnManager (1.0.0):
+    - IQKeyboardCore (= 1.0.3)
 
 DEPENDENCIES:
   - IQKeyboardReturnManager (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - IQKeyboardCore
 
 EXTERNAL SOURCES:
   IQKeyboardReturnManager:
     :path: "../"
 
 SPEC CHECKSUMS:
-  IQKeyboardReturnManager: cc4a07e8cf1b85b8f691e14ce7cbaee61a00cde3
+  IQKeyboardCore: 0adcddeac1349a2db3d3e5dd6635c9997c119c75
+  IQKeyboardReturnManager: 574bae3e4ee2581c393b77bd7f3c97986dbcf903
 
 PODFILE CHECKSUM: 604088f4699a6514976872c3e3958f28d3a00576
 

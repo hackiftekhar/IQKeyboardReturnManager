@@ -25,19 +25,25 @@ import UIKit
 
 // MARK: UITextFieldDelegate
 @available(iOSApplicationExtension, unavailable)
+@MainActor
 extension IQKeyboardReturnManager: UITextFieldDelegate {
 
     @objc public func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
 
-        guard delegate == nil else { return true }
+        var returnValue: Bool = true
 
-        if let textFieldDelegate: any UITextFieldDelegate = textInputViewCachedInfo(textField)?.textFieldDelegate {
+        if delegate == nil,
+           let textFieldDelegate: any UITextFieldDelegate = textInputViewCachedInfo(textField)?.textFieldDelegate {
             if textFieldDelegate.responds(to: #selector((any UITextFieldDelegate).textFieldShouldBeginEditing(_:))) {
-                return textFieldDelegate.textFieldShouldBeginEditing?(textField) ?? false
+                returnValue = textFieldDelegate.textFieldShouldBeginEditing?(textField) ?? false
             }
         }
 
-        return true
+        if returnValue {
+            updateReturnKey(textInputView: textField)
+        }
+
+        return returnValue
     }
 
     @objc public func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
@@ -54,7 +60,6 @@ extension IQKeyboardReturnManager: UITextFieldDelegate {
     }
 
     @objc public func textFieldDidBeginEditing(_ textField: UITextField) {
-        updateReturnKey(textInputView: textField)
 
         var aDelegate: (any UITextFieldDelegate)? = delegate
 

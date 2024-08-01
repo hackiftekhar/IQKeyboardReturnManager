@@ -25,19 +25,25 @@ import UIKit
 
 // MARK: UITextViewDelegate
 @available(iOSApplicationExtension, unavailable)
+@MainActor
 extension IQKeyboardReturnManager: UITextViewDelegate {
 
     @objc public func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
 
-        guard delegate == nil else { return true }
+        var returnValue: Bool = true
 
-        if let textViewDelegate: any UITextViewDelegate = textInputViewCachedInfo(textView)?.textViewDelegate {
+        if delegate == nil,
+           let textViewDelegate: any UITextViewDelegate = textInputViewCachedInfo(textView)?.textViewDelegate {
             if textViewDelegate.responds(to: #selector((any UITextViewDelegate).textViewShouldBeginEditing(_:))) {
-                return textViewDelegate.textViewShouldBeginEditing?(textView) ?? false
+                returnValue = textViewDelegate.textViewShouldBeginEditing?(textView) ?? false
             }
         }
 
-        return true
+        if returnValue {
+            updateReturnKey(textInputView: textView)
+        }
+
+        return returnValue
     }
 
     @objc public func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
@@ -54,7 +60,6 @@ extension IQKeyboardReturnManager: UITextViewDelegate {
     }
 
     @objc public func textViewDidBeginEditing(_ textView: UITextView) {
-        updateReturnKey(textInputView: textView)
 
         var aDelegate: (any UITextViewDelegate)? = delegate
 
@@ -218,9 +223,9 @@ extension IQKeyboardReturnManager: UITextViewDelegate {
     }
 }
 
-#if swift(>=5.7)    // Xcode 14
 @available(iOS 16.0, *)
 @available(iOSApplicationExtension, unavailable)
+@MainActor
 extension IQKeyboardReturnManager {
     public func textView(_ aTextView: UITextView,
                          editMenuForTextIn range: NSRange,
@@ -270,11 +275,11 @@ extension IQKeyboardReturnManager {
         aDelegate?.textView?(aTextView, willDismissEditMenuWith: animator)
     }
 }
-#endif
 
 #if swift(>=5.9)    // Xcode 15
 @available(iOS 17.0, *)
 @available(iOSApplicationExtension, unavailable)
+@MainActor
 extension IQKeyboardReturnManager {
 
     public func textView(_ aTextView: UITextView,
@@ -346,6 +351,7 @@ extension IQKeyboardReturnManager {
 #if swift(>=6.0)    // Xcode 16
 @available(iOS 18.0, *)
 @available(iOSApplicationExtension, unavailable)
+@MainActor
 extension IQKeyboardReturnManager {
 
     @objc public func textViewWritingToolsWillBegin(_ textView: UITextView) {

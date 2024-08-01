@@ -1,9 +1,9 @@
 {
     "name": "IQKeyboardReturnManager",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "source": {
         "git": "https://github.com/hackiftekhar/IQKeyboardReturnManager.git",
-        "tag": "1.0.0"
+        "tag": "1.0.1"
     },
     "summary": "Keyboard Return Key Observation",
     "description": "Lightweight library to observe keyboard return key and navigate between text input views.",
@@ -20,11 +20,13 @@
         "ios": "13.0"
     },
     "swift_versions": [
-        "5.6",
         "5.7",
         "5.8",
         "5.9"
     ],
+    "dependencies": {
+        "IQKeyboardCore": ["1.0.3"]
+    },
     "source_files": [
         "IQKeyboardReturnManager/Classes/**/*.{swift}"
     ],
