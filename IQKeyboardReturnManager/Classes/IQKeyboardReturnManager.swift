@@ -175,7 +175,7 @@ internal extension IQKeyboardReturnManager {
                   !inputView.isHidden, inputView.alpha != 0.0
             else { return false }
 
-            return inputView.isEnabled
+            return inputView.iqIsEnabled
         }
     }
 
