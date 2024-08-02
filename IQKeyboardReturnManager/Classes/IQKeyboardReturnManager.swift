@@ -145,7 +145,7 @@ public extension IQKeyboardReturnManager {
 @MainActor
 public extension IQKeyboardReturnManager {
     @discardableResult
-    func goToNextResponderOrResign(from textInputView: any IQTextInputView) -> Bool {
+    func goToNextResponderOrResign(from textInputView: some IQTextInputView) -> Bool {
 
         guard let textInfoCache: IQTextInputViewInfoModel = nextResponderFromTextInputView(textInputView),
               let textInputView = textInfoCache.textInputView else {
@@ -163,7 +163,7 @@ public extension IQKeyboardReturnManager {
 @MainActor
 internal extension IQKeyboardReturnManager {
 
-    func nextResponderFromTextInputView(_ textInputView: any IQTextInputView) -> IQTextInputViewInfoModel? {
+    func nextResponderFromTextInputView(_ textInputView: some IQTextInputView) -> IQTextInputViewInfoModel? {
         guard let currentIndex: Int = textInputViewCachedInfoIndex(textInputView),
                 currentIndex < textInputViewInfoCache.count - 1 else { return nil }
 
@@ -179,19 +179,19 @@ internal extension IQKeyboardReturnManager {
         }
     }
 
-    func textInputViewCachedInfoIndex(_ textInputView: any IQTextInputView) -> Int? {
+    func textInputViewCachedInfoIndex(_ textInputView: some IQTextInputView) -> Int? {
         return textInputViewInfoCache.firstIndex {
             guard let inputView = $0.textInputView else { return false }
             return inputView == textInputView
         }
     }
 
-    func textInputViewCachedInfo(_ textInputView: any IQTextInputView) -> IQTextInputViewInfoModel? {
+    func textInputViewCachedInfo(_ textInputView: some IQTextInputView) -> IQTextInputViewInfoModel? {
         guard let index: Int = textInputViewCachedInfoIndex(textInputView) else { return nil }
         return textInputViewInfoCache[index]
     }
 
-    func updateReturnKey(textInputView: any IQTextInputView) {
+    func updateReturnKey(textInputView: some IQTextInputView) {
 
         let returnKey: UIReturnKeyType
         if nextResponderFromTextInputView(textInputView) != nil {
