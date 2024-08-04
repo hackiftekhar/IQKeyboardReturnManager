@@ -66,6 +66,12 @@ Manages the return key to work like next/done in a view hierarchy.
         super.init()
     }
 
+    @available(*, unavailable, message: "Please use addResponderSubviews(of:recursive:)")
+    @objc public init(controller: UIViewController) {
+        super.init()
+        addResponderSubviews(of: controller.view, recursive: true)
+    }
+
     deinit {
 
         //        for model in textInputViewInfoCache {
@@ -167,7 +173,7 @@ internal extension IQKeyboardReturnManager {
         guard let currentIndex: Int = textInputViewCachedInfoIndex(textInputView),
                 currentIndex < textInputViewInfoCache.count - 1 else { return nil }
 
-        let candidates: [IQTextInputViewInfoModel] = Array(textInputViewInfoCache[currentIndex+1..<textInputViewInfoCache.count])
+        let candidates = Array(textInputViewInfoCache[currentIndex+1..<textInputViewInfoCache.count])
 
         return candidates.first {
             guard let inputView = $0.textInputView,
@@ -207,6 +213,31 @@ internal extension IQKeyboardReturnManager {
         }
     }
 }
+
+// swiftlint:disable unused_setter_value
+@available(iOSApplicationExtension, unavailable)
+@MainActor
+extension IQKeyboardReturnManager {
+
+    @available(*, unavailable, renamed: "lastTextInputViewReturnKeyType")
+    @objc public var lastTextFieldReturnKeyType: UIReturnKeyType {
+        get { .default }
+        set { }
+    }
+
+    @available(*, unavailable, renamed: "add(textInputView:)")
+    @objc func addTextFieldView(_ textInputView: any IQTextInputView) { }
+
+    @available(*, unavailable, renamed: "remove(textInputView:)")
+    @objc func removeTextFieldView(_ textInputView: any IQTextInputView) { }
+
+    @available(*, unavailable, renamed: "addResponderSubviews(of:recursive:)")
+    @objc func addResponderFromView(_ view: UIView, recursive: Bool) { }
+
+    @available(*, unavailable, renamed: "removeResponderSubviews(of:recursive:)")
+    @objc func removeResponderFromView(_ view: UIView, recursive: Bool = true) { }
+}
+// swiftlint:enable unused_setter_value
 
 @available(iOSApplicationExtension, unavailable)
 @MainActor
