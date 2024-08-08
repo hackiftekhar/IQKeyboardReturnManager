@@ -29,7 +29,7 @@ Manages the return key to work like next/done in a view hierarchy.
 */
 @available(iOSApplicationExtension, unavailable)
 @MainActor
-@objc public final class IQKeyboardReturnManager: NSObject {
+@objcMembers public final class IQKeyboardReturnManager: NSObject {
 
     // MARK: Private variables
     private var textInputViewInfoCache: [IQTextInputViewInfoModel] = []
@@ -39,12 +39,12 @@ Manages the return key to work like next/done in a view hierarchy.
     /**
      Delegate of textInputView
      */
-    @objc public weak var delegate: (any UITextFieldDelegate & UITextViewDelegate)?
+    public weak var delegate: (any UITextFieldDelegate & UITextViewDelegate)?
 
     /**
      Set the last textInputView return key type. Default is UIReturnKeyDefault.
      */
-    @objc public var lastTextInputViewReturnKeyType: UIReturnKeyType = .default {
+    public var lastTextInputViewReturnKeyType: UIReturnKeyType = .default {
 
         didSet {
             if let activeModel = textInputViewInfoCache.first(where: {
@@ -58,16 +58,16 @@ Manages the return key to work like next/done in a view hierarchy.
         }
     }
 
-    @objc public var dismissTextViewOnReturn: Bool = false
+    public var dismissTextViewOnReturn: Bool = false
 
     // MARK: Initialization/De-initialization
 
-    @objc public override init() {
+    public override init() {
         super.init()
     }
 
     @available(*, unavailable, message: "Please use addResponderSubviews(of:recursive:)")
-    @objc public init(controller: UIViewController) {
+    public init(controller: UIViewController) {
         super.init()
         addResponderSubviews(of: controller.view, recursive: true)
     }
@@ -93,7 +93,7 @@ public extension IQKeyboardReturnManager {
 
      @param view TextInputView object to register.
      */
-    @objc func add(textInputView: any IQTextInputView) {
+    func add(textInputView: any IQTextInputView) {
 
         let model = IQTextInputViewInfoModel(textInputView: textInputView)
         textInputViewInfoCache.append(model)
@@ -110,7 +110,7 @@ public extension IQKeyboardReturnManager {
 
      @param view TextInputView object to unregister.
      */
-    @objc func remove(textInputView: any IQTextInputView) {
+    func remove(textInputView: any IQTextInputView) {
 
         guard let index: Int = textInputViewCachedInfoIndex(textInputView) else { return }
 
@@ -123,7 +123,7 @@ public extension IQKeyboardReturnManager {
 
      @param view object to register all it's responder subviews.
      */
-    @objc func addResponderSubviews(of view: UIView, recursive: Bool) {
+    func addResponderSubviews(of view: UIView, recursive: Bool) {
 
         let textInputViews: [any IQTextInputView] = view.responderSubviews(recursive: recursive)
 
@@ -137,7 +137,7 @@ public extension IQKeyboardReturnManager {
 
      @param view object to unregister all it's responder subviews.
      */
-    @objc func removeResponderSubviews(of view: UIView, recursive: Bool) {
+    func removeResponderSubviews(of view: UIView, recursive: Bool) {
 
         let textInputViews: [any IQTextInputView] = view.responderSubviews(recursive: recursive)
 
@@ -149,9 +149,9 @@ public extension IQKeyboardReturnManager {
 
 @available(iOSApplicationExtension, unavailable)
 @MainActor
-public extension IQKeyboardReturnManager {
+@objc public extension IQKeyboardReturnManager {
     @discardableResult
-    func goToNextResponderOrResign(from textInputView: some IQTextInputView) -> Bool {
+    func goToNextResponderOrResign(from textInputView: any IQTextInputView) -> Bool {
 
         guard let textInfoCache: IQTextInputViewInfoModel = nextResponderFromTextInputView(textInputView),
               let textInputView = textInfoCache.textInputView else {
@@ -217,25 +217,25 @@ internal extension IQKeyboardReturnManager {
 // swiftlint:disable unused_setter_value
 @available(iOSApplicationExtension, unavailable)
 @MainActor
-extension IQKeyboardReturnManager {
+@objc public extension IQKeyboardReturnManager {
 
     @available(*, unavailable, renamed: "lastTextInputViewReturnKeyType")
-    @objc public var lastTextFieldReturnKeyType: UIReturnKeyType {
+    var lastTextFieldReturnKeyType: UIReturnKeyType {
         get { .default }
         set { }
     }
 
     @available(*, unavailable, renamed: "add(textInputView:)")
-    @objc func addTextFieldView(_ textInputView: any IQTextInputView) { }
+    func addTextFieldView(_ textInputView: any IQTextInputView) { }
 
     @available(*, unavailable, renamed: "remove(textInputView:)")
-    @objc func removeTextFieldView(_ textInputView: any IQTextInputView) { }
+    func removeTextFieldView(_ textInputView: any IQTextInputView) { }
 
     @available(*, unavailable, renamed: "addResponderSubviews(of:recursive:)")
-    @objc func addResponderFromView(_ view: UIView, recursive: Bool) { }
+    func addResponderFromView(_ view: UIView, recursive: Bool) { }
 
     @available(*, unavailable, renamed: "removeResponderSubviews(of:recursive:)")
-    @objc func removeResponderFromView(_ view: UIView, recursive: Bool = true) { }
+    func removeResponderFromView(_ view: UIView, recursive: Bool = true) { }
 }
 // swiftlint:enable unused_setter_value
 
@@ -275,7 +275,3 @@ fileprivate extension UIView {
         })
     }
 }
-
-@available(*, unavailable, renamed: "IQKeyboardReturnManager")
-@MainActor
-@objc public final class IQKeyboardReturnKeyHandler: NSObject {}

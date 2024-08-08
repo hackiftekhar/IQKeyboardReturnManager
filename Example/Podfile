@@ -4,10 +4,8 @@ platform :ios, '13.0'
 
 target 'IQKeyboardReturnManager_Example' do
   pod 'IQKeyboardReturnManager', :path => '../'
+end
 
-  target 'IQKeyboardReturnManager_Tests' do
-    inherit! :search_paths
-
-    
-  end
+target 'IQKeyboardReturnManager_ObjcExample' do
+  pod 'IQKeyboardReturnManager', :path => '../'
 end

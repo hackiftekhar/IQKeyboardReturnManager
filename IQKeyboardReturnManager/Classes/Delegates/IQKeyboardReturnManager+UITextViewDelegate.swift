@@ -26,9 +26,9 @@ import UIKit
 // MARK: UITextViewDelegate
 @available(iOSApplicationExtension, unavailable)
 @MainActor
-extension IQKeyboardReturnManager: UITextViewDelegate {
+@objc extension IQKeyboardReturnManager: UITextViewDelegate {
 
-    @objc public func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
+    public func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
 
         var returnValue: Bool = true
 
@@ -46,7 +46,7 @@ extension IQKeyboardReturnManager: UITextViewDelegate {
         return returnValue
     }
 
-    @objc public func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
+    public func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
 
         guard delegate == nil else { return true }
 
@@ -59,7 +59,7 @@ extension IQKeyboardReturnManager: UITextViewDelegate {
         return true
     }
 
-    @objc public func textViewDidBeginEditing(_ textView: UITextView) {
+    public func textViewDidBeginEditing(_ textView: UITextView) {
 
         var aDelegate: (any UITextViewDelegate)? = delegate
 
@@ -73,7 +73,7 @@ extension IQKeyboardReturnManager: UITextViewDelegate {
         aDelegate?.textViewDidBeginEditing?(textView)
     }
 
-    @objc public func textViewDidEndEditing(_ textView: UITextView) {
+    public func textViewDidEndEditing(_ textView: UITextView) {
 
         var aDelegate: (any UITextViewDelegate)? = delegate
 
@@ -87,7 +87,7 @@ extension IQKeyboardReturnManager: UITextViewDelegate {
         aDelegate?.textViewDidEndEditing?(textView)
     }
 
-    @objc public func textView(_ textView: UITextView,
+    public func textView(_ textView: UITextView,
                                shouldChangeTextIn range: NSRange,
                                replacementText text: String) -> Bool {
 
@@ -113,7 +113,7 @@ extension IQKeyboardReturnManager: UITextViewDelegate {
         return shouldChange
     }
 
-    @objc public func textViewDidChange(_ textView: UITextView) {
+    public func textViewDidChange(_ textView: UITextView) {
 
         var aDelegate: (any UITextViewDelegate)? = delegate
 
@@ -127,7 +127,7 @@ extension IQKeyboardReturnManager: UITextViewDelegate {
         aDelegate?.textViewDidChange?(textView)
     }
 
-    @objc public func textViewDidChangeSelection(_ textView: UITextView) {
+    public func textViewDidChangeSelection(_ textView: UITextView) {
 
         var aDelegate: (any UITextViewDelegate)? = delegate
 
@@ -142,7 +142,7 @@ extension IQKeyboardReturnManager: UITextViewDelegate {
     }
 
     @available(iOS, deprecated: 17.0)
-    @objc public func textView(_ aTextView: UITextView,
+    public func textView(_ aTextView: UITextView,
                                shouldInteractWith URL: URL,
                                in characterRange: NSRange,
                                interaction: UITextItemInteraction) -> Bool {
@@ -164,7 +164,7 @@ extension IQKeyboardReturnManager: UITextViewDelegate {
     }
 
     @available(iOS, deprecated: 17.0)
-    @objc public func textView(_ aTextView: UITextView,
+    public func textView(_ aTextView: UITextView,
                                shouldInteractWith textAttachment: NSTextAttachment,
                                in characterRange: NSRange,
                                interaction: UITextItemInteraction) -> Bool {
@@ -187,7 +187,7 @@ extension IQKeyboardReturnManager: UITextViewDelegate {
     }
 
     @available(iOS, deprecated: 10.0)
-    @objc public func textView(_ aTextView: UITextView,
+    public func textView(_ aTextView: UITextView,
                                shouldInteractWith URL: URL,
                                in characterRange: NSRange) -> Bool {
 
@@ -205,7 +205,7 @@ extension IQKeyboardReturnManager: UITextViewDelegate {
     }
 
     @available(iOS, deprecated: 10.0)
-    @objc public func textView(_ aTextView: UITextView,
+    public func textView(_ aTextView: UITextView,
                                shouldInteractWith textAttachment: NSTextAttachment,
                                in characterRange: NSRange) -> Bool {
 
@@ -226,10 +226,10 @@ extension IQKeyboardReturnManager: UITextViewDelegate {
 @available(iOS 16.0, *)
 @available(iOSApplicationExtension, unavailable)
 @MainActor
-extension IQKeyboardReturnManager {
+@objc extension IQKeyboardReturnManager {
     public func textView(_ aTextView: UITextView,
-                         editMenuForTextIn range: NSRange,
-                         suggestedActions: [UIMenuElement]) -> UIMenu? {
+                               editMenuForTextIn range: NSRange,
+                               suggestedActions: [UIMenuElement]) -> UIMenu? {
 
         guard delegate == nil else { return nil }
 
@@ -248,7 +248,7 @@ extension IQKeyboardReturnManager {
     }
 
     public func textView(_ aTextView: UITextView,
-                         willPresentEditMenuWith animator: any UIEditMenuInteractionAnimating) {
+                               willPresentEditMenuWith animator: any UIEditMenuInteractionAnimating) {
         var aDelegate: (any UITextViewDelegate)? = delegate
 
         if aDelegate == nil {
@@ -262,7 +262,7 @@ extension IQKeyboardReturnManager {
     }
 
     public func textView(_ aTextView: UITextView,
-                         willDismissEditMenuWith animator: any UIEditMenuInteractionAnimating) {
+                               willDismissEditMenuWith animator: any UIEditMenuInteractionAnimating) {
         var aDelegate: (any UITextViewDelegate)? = delegate
 
         if aDelegate == nil {
@@ -280,11 +280,11 @@ extension IQKeyboardReturnManager {
 @available(iOS 17.0, *)
 @available(iOSApplicationExtension, unavailable)
 @MainActor
-extension IQKeyboardReturnManager {
+@objc public extension IQKeyboardReturnManager {
 
-    public func textView(_ aTextView: UITextView,
-                         primaryActionFor textItem: UITextItem,
-                         defaultAction: UIAction) -> UIAction? {
+    func textView(_ aTextView: UITextView,
+                        primaryActionFor textItem: UITextItem,
+                        defaultAction: UIAction) -> UIAction? {
         guard delegate == nil else { return nil }
 
         if let textViewDelegate = textInputViewCachedInfo(aTextView)?.textViewDelegate {
@@ -298,9 +298,9 @@ extension IQKeyboardReturnManager {
         return nil
     }
 
-    public func textView(_ aTextView: UITextView,
-                         menuConfigurationFor textItem: UITextItem,
-                         defaultMenu: UIMenu) -> UITextItem.MenuConfiguration? {
+    func textView(_ aTextView: UITextView,
+                        menuConfigurationFor textItem: UITextItem,
+                        defaultMenu: UIMenu) -> UITextItem.MenuConfiguration? {
         guard delegate == nil else { return nil }
 
         if let textViewDelegate = textInputViewCachedInfo(aTextView)?.textViewDelegate {
@@ -316,9 +316,9 @@ extension IQKeyboardReturnManager {
         return nil
     }
 
-    public func textView(_ textView: UITextView,
-                         textItemMenuWillDisplayFor textItem: UITextItem,
-                         animator: any UIContextMenuInteractionAnimating) {
+    func textView(_ textView: UITextView,
+                        textItemMenuWillDisplayFor textItem: UITextItem,
+                        animator: any UIContextMenuInteractionAnimating) {
         var aDelegate: (any UITextViewDelegate)? = delegate
 
         if aDelegate == nil {
@@ -331,9 +331,9 @@ extension IQKeyboardReturnManager {
         aDelegate?.textView?(textView, textItemMenuWillDisplayFor: textItem, animator: animator)
     }
 
-    public func textView(_ textView: UITextView,
-                         textItemMenuWillEndFor textItem: UITextItem,
-                         animator: any UIContextMenuInteractionAnimating) {
+    func textView(_ textView: UITextView,
+                        textItemMenuWillEndFor textItem: UITextItem,
+                        animator: any UIContextMenuInteractionAnimating) {
         var aDelegate: (any UITextViewDelegate)? = delegate
 
         if aDelegate == nil {
@@ -352,9 +352,9 @@ extension IQKeyboardReturnManager {
 @available(iOS 18.0, *)
 @available(iOSApplicationExtension, unavailable)
 @MainActor
-extension IQKeyboardReturnManager {
+@objc public extension IQKeyboardReturnManager {
 
-    @objc public func textViewWritingToolsWillBegin(_ textView: UITextView) {
+    func textViewWritingToolsWillBegin(_ textView: UITextView) {
 
         var aDelegate: (any UITextViewDelegate)? = delegate
 
@@ -368,7 +368,7 @@ extension IQKeyboardReturnManager {
         aDelegate?.textViewWritingToolsWillBegin?(textView)
     }
 
-    @objc public func textViewWritingToolsDidEnd(_ textView: UITextView) {
+    func textViewWritingToolsDidEnd(_ textView: UITextView) {
 
         var aDelegate: (any UITextViewDelegate)? = delegate
 
@@ -382,7 +382,7 @@ extension IQKeyboardReturnManager {
         aDelegate?.textViewWritingToolsDidEnd?(textView)
     }
 
-    @objc public func textView(_ textView: UITextView,
+    func textView(_ textView: UITextView,
                                writingToolsIgnoredRangesInEnclosingRange enclosingRange: NSRange) -> [NSValue] {
         guard delegate == nil else { return [] }
 

@@ -26,9 +26,9 @@ import UIKit
 // MARK: UITextFieldDelegate
 @available(iOSApplicationExtension, unavailable)
 @MainActor
-extension IQKeyboardReturnManager: UITextFieldDelegate {
+@objc extension IQKeyboardReturnManager: UITextFieldDelegate {
 
-    @objc public func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+    public func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
 
         var returnValue: Bool = true
 
@@ -46,7 +46,7 @@ extension IQKeyboardReturnManager: UITextFieldDelegate {
         return returnValue
     }
 
-    @objc public func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+    public func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
 
         guard delegate == nil else { return true }
 
@@ -59,7 +59,7 @@ extension IQKeyboardReturnManager: UITextFieldDelegate {
         return true
     }
 
-    @objc public func textFieldDidBeginEditing(_ textField: UITextField) {
+    public func textFieldDidBeginEditing(_ textField: UITextField) {
 
         var aDelegate: (any UITextFieldDelegate)? = delegate
 
@@ -73,7 +73,7 @@ extension IQKeyboardReturnManager: UITextFieldDelegate {
         aDelegate?.textFieldDidBeginEditing?(textField)
     }
 
-    @objc public func textFieldDidEndEditing(_ textField: UITextField) {
+    public func textFieldDidEndEditing(_ textField: UITextField) {
 
         var aDelegate: (any UITextFieldDelegate)? = delegate
 
@@ -87,7 +87,7 @@ extension IQKeyboardReturnManager: UITextFieldDelegate {
         aDelegate?.textFieldDidEndEditing?(textField)
     }
 
-    @objc public func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
+    public func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
 
         var aDelegate: (any UITextFieldDelegate)? = delegate
 
@@ -101,7 +101,7 @@ extension IQKeyboardReturnManager: UITextFieldDelegate {
         aDelegate?.textFieldDidEndEditing?(textField, reason: reason)
     }
 
-    @objc public func textField(_ textField: UITextField,
+    public func textField(_ textField: UITextField,
                                 shouldChangeCharactersIn range: NSRange,
                                 replacementString string: String) -> Bool {
 
@@ -119,7 +119,7 @@ extension IQKeyboardReturnManager: UITextFieldDelegate {
         return true
     }
 
-    @objc public func textFieldShouldClear(_ textField: UITextField) -> Bool {
+    public func textFieldShouldClear(_ textField: UITextField) -> Bool {
 
         guard delegate == nil else { return true }
 
@@ -132,7 +132,7 @@ extension IQKeyboardReturnManager: UITextFieldDelegate {
         return true
     }
 
-    @objc public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 
         guard delegate == nil else { return true }
 
