@@ -21,7 +21,7 @@
 		C01ED13C2C6A3E96004BA157 /* IQKeyboardReturnManager+UITextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01ED1342C6A3E96004BA157 /* IQKeyboardReturnManager+UITextFieldDelegate.swift */; };
 		C01ED13D2C6A3E96004BA157 /* IQKeyboardReturnManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01ED1352C6A3E96004BA157 /* IQKeyboardReturnManager.swift */; };
 		C01ED13F2C6A3E96004BA157 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = C01ED1382C6A3E96004BA157 /* PrivacyInfo.xcprivacy */; };
-		C01ED1412C6A3F65004BA157 /* IQKeyboardCore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C01ED1402C6A3F65004BA157 /* IQKeyboardCore.xcframework */; };
+		C01ED15F2C6A4318004BA157 /* IQKeyboardCore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C01ED15E2C6A4318004BA157 /* IQKeyboardCore.xcframework */; };
 		C0569A162C4E599900B2316A /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0569A152C4E599900B2316A /* ContainerViewController.swift */; };
 		C0619FB32C64D9F100ED1F7D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C0619FB22C64D9F100ED1F7D /* AppDelegate.m */; };
 		C0619FB62C64D9F100ED1F7D /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C0619FB52C64D9F100ED1F7D /* SceneDelegate.m */; };
@@ -90,6 +90,7 @@
 		C01ED1372C6A3E96004BA157 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		C01ED1382C6A3E96004BA157 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		C01ED1402C6A3F65004BA157 /* IQKeyboardCore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = IQKeyboardCore.xcframework; path = Carthage/Build/IQKeyboardCore.xcframework; sourceTree = "<group>"; };
+		C01ED15E2C6A4318004BA157 /* IQKeyboardCore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = IQKeyboardCore.xcframework; path = ../Carthage/Build/IQKeyboardCore.xcframework; sourceTree = "<group>"; };
 		C0569A152C4E599900B2316A /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		C0619FAF2C64D9F100ED1F7D /* IQKeyboardReturnManager_ObjcExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IQKeyboardReturnManager_ObjcExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0619FB12C64D9F100ED1F7D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -129,7 +130,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C01ED1412C6A3F65004BA157 /* IQKeyboardCore.xcframework in Frameworks */,
+				C01ED15F2C6A4318004BA157 /* IQKeyboardCore.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				C01ED1402C6A3F65004BA157 /* IQKeyboardCore.xcframework */,
+				C01ED15E2C6A4318004BA157 /* IQKeyboardCore.xcframework */,
 				FA87DD181FAB6DDD25AB96DF /* Pods_IQKeyboardReturnManager_Example.framework */,
 				086073D839AD0A4732CFEF79 /* Pods_IQKeyboardReturnManager_ObjcExample.framework */,
 			);
