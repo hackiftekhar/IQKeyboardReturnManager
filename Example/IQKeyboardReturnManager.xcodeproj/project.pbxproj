@@ -14,8 +14,6 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
-		C01ED1282C6A3E5F004BA157 /* IQKeyboardReturnManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C01ED1222C6A3E5F004BA157 /* IQKeyboardReturnManager.framework */; };
-		C01ED1292C6A3E5F004BA157 /* IQKeyboardReturnManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C01ED1222C6A3E5F004BA157 /* IQKeyboardReturnManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C01ED1392C6A3E96004BA157 /* IQTextInputViewInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01ED1302C6A3E96004BA157 /* IQTextInputViewInfoModel.swift */; };
 		C01ED13B2C6A3E96004BA157 /* IQKeyboardReturnManager+UITextViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01ED1332C6A3E96004BA157 /* IQKeyboardReturnManager+UITextViewDelegate.swift */; };
 		C01ED13C2C6A3E96004BA157 /* IQKeyboardReturnManager+UITextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01ED1342C6A3E96004BA157 /* IQKeyboardReturnManager+UITextFieldDelegate.swift */; };
@@ -41,28 +39,7 @@
 			remoteGlobalIDString = 607FACCF1AFB9204008FA782;
 			remoteInfo = IQKeyboardReturnManager;
 		};
-		C01ED1262C6A3E5F004BA157 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C01ED1212C6A3E5F004BA157;
-			remoteInfo = "IQKeyboardReturnManager-iOS";
-		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		C01ED12A2C6A3E60004BA157 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				C01ED1292C6A3E5F004BA157 /* IQKeyboardReturnManager.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		04055CE648758CD1BB57595E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -81,7 +58,7 @@
 		6F0E88EC775A8399A4E470E7 /* Pods-IQKeyboardReturnManager_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IQKeyboardReturnManager_Example.release.xcconfig"; path = "Target Support Files/Pods-IQKeyboardReturnManager_Example/Pods-IQKeyboardReturnManager_Example.release.xcconfig"; sourceTree = "<group>"; };
 		B857394222A3E3C473153621 /* Pods-IQKeyboardReturnManager_ObjcExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IQKeyboardReturnManager_ObjcExample.debug.xcconfig"; path = "Target Support Files/Pods-IQKeyboardReturnManager_ObjcExample/Pods-IQKeyboardReturnManager_ObjcExample.debug.xcconfig"; sourceTree = "<group>"; };
 		C005AA932C4E4B6C0041C315 /* IQKeyboardReturnManager.podspec.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = IQKeyboardReturnManager.podspec.json; path = ../IQKeyboardReturnManager.podspec.json; sourceTree = "<group>"; };
-		C01ED1222C6A3E5F004BA157 /* IQKeyboardReturnManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IQKeyboardReturnManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C01ED1222C6A3E5F004BA157 /* IQKeyboardReturnManager_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IQKeyboardReturnManager_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C01ED1302C6A3E96004BA157 /* IQTextInputViewInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IQTextInputViewInfoModel.swift; sourceTree = "<group>"; };
 		C01ED1312C6A3E96004BA157 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		C01ED1332C6A3E96004BA157 /* IQKeyboardReturnManager+UITextViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQKeyboardReturnManager+UITextViewDelegate.swift"; sourceTree = "<group>"; };
@@ -115,7 +92,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C81B73AA015ECC99110037BA /* Pods_IQKeyboardReturnManager_Example.framework in Frameworks */,
-				C01ED1282C6A3E5F004BA157 /* IQKeyboardReturnManager.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,7 +141,7 @@
 				607FACD01AFB9204008FA782 /* IQKeyboardReturnManager_Example.app */,
 				607FACE51AFB9204008FA782 /* IQKeyboardReturnManager_Tests.xctest */,
 				C0619FAF2C64D9F100ED1F7D /* IQKeyboardReturnManager_ObjcExample.app */,
-				C01ED1222C6A3E5F004BA157 /* IQKeyboardReturnManager.framework */,
+				C01ED1222C6A3E5F004BA157 /* IQKeyboardReturnManager_iOS.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -321,12 +297,10 @@
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
 				71E2D99A5A0B5B86293155F1 /* [CP] Embed Pods Frameworks */,
-				C01ED12A2C6A3E60004BA157 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				C01ED1272C6A3E5F004BA157 /* PBXTargetDependency */,
 			);
 			name = IQKeyboardReturnManager_Example;
 			productName = IQKeyboardReturnManager;
@@ -351,9 +325,9 @@
 			productReference = 607FACE51AFB9204008FA782 /* IQKeyboardReturnManager_Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		C01ED1212C6A3E5F004BA157 /* IQKeyboardReturnManager */ = {
+		C01ED1212C6A3E5F004BA157 /* IQKeyboardReturnManager-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C01ED12D2C6A3E60004BA157 /* Build configuration list for PBXNativeTarget "IQKeyboardReturnManager" */;
+			buildConfigurationList = C01ED12D2C6A3E60004BA157 /* Build configuration list for PBXNativeTarget "IQKeyboardReturnManager-iOS" */;
 			buildPhases = (
 				C01ED11D2C6A3E5F004BA157 /* Headers */,
 				C01ED11E2C6A3E5F004BA157 /* Sources */,
@@ -364,9 +338,9 @@
 			);
 			dependencies = (
 			);
-			name = IQKeyboardReturnManager;
+			name = "IQKeyboardReturnManager-iOS";
 			productName = "IQKeyboardReturnManager-iOS";
-			productReference = C01ED1222C6A3E5F004BA157 /* IQKeyboardReturnManager.framework */;
+			productReference = C01ED1222C6A3E5F004BA157 /* IQKeyboardReturnManager_iOS.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		C0619FAE2C64D9F100ED1F7D /* IQKeyboardReturnManager_ObjcExample */ = {
@@ -433,7 +407,7 @@
 				607FACCF1AFB9204008FA782 /* IQKeyboardReturnManager_Example */,
 				C0619FAE2C64D9F100ED1F7D /* IQKeyboardReturnManager_ObjcExample */,
 				607FACE41AFB9204008FA782 /* IQKeyboardReturnManager_Tests */,
-				C01ED1212C6A3E5F004BA157 /* IQKeyboardReturnManager */,
+				C01ED1212C6A3E5F004BA157 /* IQKeyboardReturnManager-iOS */,
 			);
 		};
 /* End PBXProject section */
@@ -612,11 +586,6 @@
 			target = 607FACCF1AFB9204008FA782 /* IQKeyboardReturnManager_Example */;
 			targetProxy = 607FACE61AFB9204008FA782 /* PBXContainerItemProxy */;
 		};
-		C01ED1272C6A3E5F004BA157 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = C01ED1212C6A3E5F004BA157 /* IQKeyboardReturnManager */;
-			targetProxy = C01ED1262C6A3E5F004BA157 /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -759,7 +728,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = ED00697B14DDF79AFCC4A026 /* Pods-IQKeyboardReturnManager_Example.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = IQKeyboardReturnManager/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -779,7 +747,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6F0E88EC775A8399A4E470E7 /* Pods-IQKeyboardReturnManager_Example.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = IQKeyboardReturnManager/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -869,7 +836,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2024 CocoaPods. All rights reserved.";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -918,7 +885,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2024 CocoaPods. All rights reserved.";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1054,7 +1021,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C01ED12D2C6A3E60004BA157 /* Build configuration list for PBXNativeTarget "IQKeyboardReturnManager" */ = {
+		C01ED12D2C6A3E60004BA157 /* Build configuration list for PBXNativeTarget "IQKeyboardReturnManager-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01ED12B2C6A3E60004BA157 /* Debug */,

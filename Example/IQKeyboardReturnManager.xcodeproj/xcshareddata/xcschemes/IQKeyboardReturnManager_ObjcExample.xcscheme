@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C01ED1212C6A3E5F004BA157"
-               BuildableName = "IQKeyboardReturnManager_iOS.framework"
-               BlueprintName = "IQKeyboardReturnManager-iOS"
+               BlueprintIdentifier = "C0619FAE2C64D9F100ED1F7D"
+               BuildableName = "IQKeyboardReturnManager_ObjcExample.app"
+               BlueprintName = "IQKeyboardReturnManager_ObjcExample"
                ReferencedContainer = "container:IQKeyboardReturnManager.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -39,6 +39,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "C0619FAE2C64D9F100ED1F7D"
+            BuildableName = "IQKeyboardReturnManager_ObjcExample.app"
+            BlueprintName = "IQKeyboardReturnManager_ObjcExample"
+            ReferencedContainer = "container:IQKeyboardReturnManager.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -46,15 +56,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C01ED1212C6A3E5F004BA157"
-            BuildableName = "IQKeyboardReturnManager_iOS.framework"
-            BlueprintName = "IQKeyboardReturnManager-iOS"
+            BlueprintIdentifier = "C0619FAE2C64D9F100ED1F7D"
+            BuildableName = "IQKeyboardReturnManager_ObjcExample.app"
+            BlueprintName = "IQKeyboardReturnManager_ObjcExample"
             ReferencedContainer = "container:IQKeyboardReturnManager.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
