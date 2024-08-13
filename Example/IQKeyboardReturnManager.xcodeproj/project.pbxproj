@@ -58,7 +58,7 @@
 		6F0E88EC775A8399A4E470E7 /* Pods-IQKeyboardReturnManager_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IQKeyboardReturnManager_Example.release.xcconfig"; path = "Target Support Files/Pods-IQKeyboardReturnManager_Example/Pods-IQKeyboardReturnManager_Example.release.xcconfig"; sourceTree = "<group>"; };
 		B857394222A3E3C473153621 /* Pods-IQKeyboardReturnManager_ObjcExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IQKeyboardReturnManager_ObjcExample.debug.xcconfig"; path = "Target Support Files/Pods-IQKeyboardReturnManager_ObjcExample/Pods-IQKeyboardReturnManager_ObjcExample.debug.xcconfig"; sourceTree = "<group>"; };
 		C005AA932C4E4B6C0041C315 /* IQKeyboardReturnManager.podspec.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = IQKeyboardReturnManager.podspec.json; path = ../IQKeyboardReturnManager.podspec.json; sourceTree = "<group>"; };
-		C01ED1222C6A3E5F004BA157 /* IQKeyboardReturnManager_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IQKeyboardReturnManager_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C01ED1222C6A3E5F004BA157 /* IQKeyboardReturnManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IQKeyboardReturnManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C01ED1302C6A3E96004BA157 /* IQTextInputViewInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IQTextInputViewInfoModel.swift; sourceTree = "<group>"; };
 		C01ED1312C6A3E96004BA157 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		C01ED1332C6A3E96004BA157 /* IQKeyboardReturnManager+UITextViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQKeyboardReturnManager+UITextViewDelegate.swift"; sourceTree = "<group>"; };
@@ -141,7 +141,7 @@
 				607FACD01AFB9204008FA782 /* IQKeyboardReturnManager_Example.app */,
 				607FACE51AFB9204008FA782 /* IQKeyboardReturnManager_Tests.xctest */,
 				C0619FAF2C64D9F100ED1F7D /* IQKeyboardReturnManager_ObjcExample.app */,
-				C01ED1222C6A3E5F004BA157 /* IQKeyboardReturnManager_iOS.framework */,
+				C01ED1222C6A3E5F004BA157 /* IQKeyboardReturnManager.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -340,7 +340,7 @@
 			);
 			name = "IQKeyboardReturnManager-iOS";
 			productName = "IQKeyboardReturnManager-iOS";
-			productReference = C01ED1222C6A3E5F004BA157 /* IQKeyboardReturnManager_iOS.framework */;
+			productReference = C01ED1222C6A3E5F004BA157 /* IQKeyboardReturnManager.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		C0619FAE2C64D9F100ED1F7D /* IQKeyboardReturnManager_ObjcExample */ = {
@@ -849,7 +849,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.infoenum.IQKeyboardReturnManager-iOS";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = IQKeyboardReturnManager;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -897,7 +897,7 @@
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.infoenum.IQKeyboardReturnManager-iOS";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = IQKeyboardReturnManager;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
