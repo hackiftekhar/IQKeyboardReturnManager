@@ -86,7 +86,7 @@ Manages the return key to work like next/done in a view hierarchy.
 
 @available(iOSApplicationExtension, unavailable)
 @MainActor
-public extension IQKeyboardReturnManager {
+@objc public extension IQKeyboardReturnManager {
 
     /**
      Should pass TextInputView instance. Assign textInputView delegate to self, change it's returnKeyType.
@@ -171,7 +171,7 @@ internal extension IQKeyboardReturnManager {
 
     func nextResponderFromTextInputView(_ textInputView: some IQTextInputView) -> IQTextInputViewInfoModel? {
         guard let currentIndex: Int = textInputViewCachedInfoIndex(textInputView),
-                currentIndex < textInputViewInfoCache.count - 1 else { return nil }
+              currentIndex < textInputViewInfoCache.count - 1 else { return nil }
 
         let candidates = Array(textInputViewInfoCache[currentIndex+1..<textInputViewInfoCache.count])
 
@@ -214,6 +214,7 @@ internal extension IQKeyboardReturnManager {
     }
 }
 
+// MARK: Deprecated
 // swiftlint:disable unused_setter_value
 @available(iOSApplicationExtension, unavailable)
 @MainActor
