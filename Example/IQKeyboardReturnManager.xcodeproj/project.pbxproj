@@ -60,11 +60,9 @@
 		C005AA932C4E4B6C0041C315 /* IQKeyboardReturnManager.podspec.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = IQKeyboardReturnManager.podspec.json; path = ../IQKeyboardReturnManager.podspec.json; sourceTree = "<group>"; };
 		C01ED1222C6A3E5F004BA157 /* IQKeyboardReturnManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IQKeyboardReturnManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C01ED1302C6A3E96004BA157 /* IQTextInputViewInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IQTextInputViewInfoModel.swift; sourceTree = "<group>"; };
-		C01ED1312C6A3E96004BA157 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		C01ED1332C6A3E96004BA157 /* IQKeyboardReturnManager+UITextViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQKeyboardReturnManager+UITextViewDelegate.swift"; sourceTree = "<group>"; };
 		C01ED1342C6A3E96004BA157 /* IQKeyboardReturnManager+UITextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQKeyboardReturnManager+UITextFieldDelegate.swift"; sourceTree = "<group>"; };
 		C01ED1352C6A3E96004BA157 /* IQKeyboardReturnManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IQKeyboardReturnManager.swift; sourceTree = "<group>"; };
-		C01ED1372C6A3E96004BA157 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		C01ED1382C6A3E96004BA157 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		C01ED1402C6A3F65004BA157 /* IQKeyboardCore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = IQKeyboardCore.xcframework; path = Carthage/Build/IQKeyboardCore.xcframework; sourceTree = "<group>"; };
 		C01ED15E2C6A4318004BA157 /* IQKeyboardCore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = IQKeyboardCore.xcframework; path = ../Carthage/Build/IQKeyboardCore.xcframework; sourceTree = "<group>"; };
@@ -232,7 +230,6 @@
 			isa = PBXGroup;
 			children = (
 				C01ED1302C6A3E96004BA157 /* IQTextInputViewInfoModel.swift */,
-				C01ED1312C6A3E96004BA157 /* .gitkeep */,
 				C01ED1322C6A3E96004BA157 /* Delegates */,
 				C01ED1352C6A3E96004BA157 /* IQKeyboardReturnManager.swift */,
 			);
@@ -251,7 +248,6 @@
 		C01ED1362C6A3E96004BA157 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				C01ED1372C6A3E96004BA157 /* .gitkeep */,
 				C01ED1382C6A3E96004BA157 /* PrivacyInfo.xcprivacy */,
 			);
 			path = Assets;
@@ -296,6 +292,7 @@
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
+				C0620C452C746BD3006AE1CE /* Swiftlint */,
 				71E2D99A5A0B5B86293155F1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
@@ -534,6 +531,24 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		C0620C452C746BD3006AE1CE /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

@@ -91,7 +91,7 @@ Manages the return key to work like next/done in a view hierarchy.
     /**
      Should pass TextInputView instance. Assign textInputView delegate to self, change it's returnKeyType.
 
-     @param view TextInputView object to register.
+     @param textInputView TextInputView object to register.
      */
     func add(textInputView: any IQTextInputView) {
 
@@ -108,7 +108,7 @@ Manages the return key to work like next/done in a view hierarchy.
     /**
      Should pass TextInputView instance. Restore it's textInputView delegate and it's returnKeyType.
 
-     @param view TextInputView object to unregister.
+     @param textInputView TextInputView object to unregister.
      */
     func remove(textInputView: any IQTextInputView) {
 

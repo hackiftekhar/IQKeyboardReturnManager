@@ -2,13 +2,16 @@ PODS:
   - IQKeyboardCore (1.0.5)
   - IQKeyboardReturnManager (1.0.4):
     - IQKeyboardCore (= 1.0.5)
+  - SwiftLint (0.56.1)
 
 DEPENDENCIES:
   - IQKeyboardReturnManager (from `../`)
+  - SwiftLint
 
 SPEC REPOS:
   trunk:
     - IQKeyboardCore
+    - SwiftLint
 
 EXTERNAL SOURCES:
   IQKeyboardReturnManager:
@@ -17,7 +20,8 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   IQKeyboardCore: 28c8bf3bcd8ba5aa1570b318cbc4da94b861711e
   IQKeyboardReturnManager: 972be48528ce9e7508ab3ab15ac7efac803f17f5
+  SwiftLint: c5fa0b7eece474d43d2178b581a1242a16267347
 
-PODFILE CHECKSUM: 5ca37336cb11ed4350044164c261a885a9c18dcf
+PODFILE CHECKSUM: c65219a51c266afd94b2539a52b0818eafb73f93
 
 COCOAPODS: 1.15.2

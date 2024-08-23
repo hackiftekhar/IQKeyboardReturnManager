@@ -42,4 +42,3 @@ class ViewController: UIViewController {
         returnManager2.add(textInputView: textView24)
     }
 }
-
