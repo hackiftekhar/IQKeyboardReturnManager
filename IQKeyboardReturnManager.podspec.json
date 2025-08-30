@@ -1,9 +1,9 @@
 {
     "name": "IQKeyboardReturnManager",
-    "version": "1.0.5",
+    "version": "1.0.6",
     "source": {
         "git": "https://github.com/hackiftekhar/IQKeyboardReturnManager.git",
-        "tag": "1.0.5"
+        "tag": "1.0.6"
     },
     "summary": "Keyboard Return Key Observation",
     "description": "Lightweight library to observe keyboard return key and navigate between text input views.",
